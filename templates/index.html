@@ -3,28 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เว็บดาวน์โหลดวิดีโอออนไลน์ (Video Downloader)</title>
-    <!-- Tailwind CSS CDN -->
+    <title>เว็บดาวน์โหลดวิดีโอออนไลน์ - Video Downloader ฟรีทุกแพลตฟอร์ม</title>
+    <meta name="description" content="เว็บไซต์ดาวน์โหลดวิดีโอและเสียงออนไลน์ฟรี รองรับ YouTube, TikTok, Facebook, Instagram โหลดง่าย ได้ทั้งไฟล์วิดีโอ MP4 และ MP3">
+    <meta name="keywords" content="ดาวน์โหลดวิดีโอ, โหลดคลิปยูทูป, โหลดติ๊กต็อก, YouTube Downloader, TikTok Downloader, โหลด MP3">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Prompt', sans-serif; }
-    </style>
+    <style> body { font-family: 'Prompt', sans-serif; } </style>
 </head>
 <body class="bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 min-h-screen text-white flex items-center justify-center p-4">
 
     <div class="w-full max-w-xl bg-slate-800/80 backdrop-blur-xl border border-slate-700 rounded-2xl shadow-2xl p-6 sm:p-8">
-        <!-- Header -->
         <div class="text-center mb-8">
             <h1 class="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 🎬 Video Downloader
             </h1>
-            <p class="text-slate-400 text-sm mt-2">
-                ดาวน์โหลดวิดีโอและเสียงจาก YouTube, TikTok, Facebook และอื่นๆ ได้ฟรี!
-            </p>
+            <p class="text-slate-400 text-sm mt-2">ดาวน์โหลดวิดีโอและเสียงจาก YouTube, TikTok, Facebook และอื่นๆ ได้ฟรี!</p>
         </div>
 
-        <!-- Form -->
         <div class="space-y-5">
             <div>
                 <label class="block text-sm font-medium text-slate-300 mb-2">วางลิงก์วิดีโอ (URL)</label>
@@ -52,7 +47,6 @@
             </button>
         </div>
 
-        <!-- Status & Result Section -->
         <div id="statusContainer" class="mt-6 hidden">
             <div id="loadingBox" class="text-center py-4 text-slate-300 flex items-center justify-center space-x-3">
                 <svg class="animate-spin h-6 w-6 text-purple-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -92,7 +86,6 @@
                 return;
             }
 
-            // Reset UI
             downloadBtn.disabled = true;
             downloadBtn.classList.add('opacity-50', 'cursor-not-allowed');
             statusContainer.classList.remove('hidden');
