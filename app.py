@@ -31,6 +31,7 @@ def download():
             'outtmpl': os.path.join(DOWNLOAD_DIR, f'%(title)s_{unique_id}.%(ext)s'),
             'ffmpeg_location': ffmpeg_exe,
             'noplaylist': True,
+            'extractor_args': {'youtube': {'player_client': ['android', 'web']}},
         }
 
         if file_type == 'audio':
