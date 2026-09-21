@@ -6,7 +6,6 @@ import imageio_ffmpeg
 
 app = Flask(__name__)
 
-# Temporary download directory
 DOWNLOAD_DIR = os.path.join(os.getcwd(), "web_downloads")
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
@@ -18,7 +17,7 @@ def index():
 def download():
     data = request.json
     url = data.get("url", "").strip()
-    file_type = data.get("type", "video") # "video" or "audio"
+    file_type = data.get("type", "video")
 
     if not url:
         return jsonify({"success": False, "error": "กรุณากรอกลิงก์วิดีโอ"}), 400
@@ -42,7 +41,6 @@ def download():
             }
         }
 
-        # Check if cookies.txt exists for authentication fallback
         cookies_path = os.path.join(os.getcwd(), 'cookies.txt')
         if os.path.exists(cookies_path):
             ydl_opts['cookiefile'] = cookies_path
@@ -69,7 +67,6 @@ def download():
                 filename = os.path.splitext(filename)[0] + '.mp3'
 
             if not os.path.exists(filename):
-                # Fallback search in download dir with unique_id
                 for f in os.listdir(DOWNLOAD_DIR):
                     if unique_id in f:
                         filename = os.path.join(DOWNLOAD_DIR, f)
